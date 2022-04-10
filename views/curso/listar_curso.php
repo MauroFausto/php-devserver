@@ -13,10 +13,7 @@
 		<h2>Lista de Cursos</h2>
 		<table border="1" id="curso">
 			<tr>
-				<th>Id</th>
-				<th>Nome</th>
-				<th>CPF</th>
-				<th>Data de Nascimento</th>
+				<th>Nome do Curso</th>
 				<th>Ações</th>
 			</tr>
 			<?php
@@ -26,19 +23,12 @@
 					{
 						echo "<tr>";
 						echo "<td>{$dado->idaluno}</td>";
-						echo "<td>{$dado->nome}</td>";
-						echo "<td>{$dado->cpf}</td>";
-						echo "<td>" . date("d/m/Y", strtotime($dado->dataNascimento)) . "</td>";
-						
-						echo "<td>
-						<a href='index.php?controle=AlunoController&metodo=alterar&id={$dado->idaluno}'>Alterar</a>&nbsp;&nbsp;";
-					?>
-						
-						<a href="index.php?controle=AlunoController&metodo=excluir&id=<?php echo $dado->idaluno;?>" onclick="return confirm('Confirma a exclusão do aluno?')">Excluir</a>
-						
-						</td>
-						
-						</tr>
+						echo "<td>{$dado->nome}</td>";						
+						echo "<td><a href='index.php?controle=CursoController&metodo=alterar&id={$dado->idcurso}'>Alterar</a>&nbsp;&nbsp;";
+			?>
+						<a href="index.php?controle=CursoController&metodo=excluir&id=<?php echo $dado->idcurso;?>" onclick="return confirm('Confirma a exclusão do curso?')">Excluir</a>
+					</td>		
+                </tr>
 			<?php
 					}
 				}
@@ -46,24 +36,22 @@
 					echo "<h2>$retorno</h2>";
 			?>
 		</table>
-		<a href="index.php?controle=AlunoController&metodo=inserir">Novo Aluno</a>
+		<a href="index.php?controle=CursoController&metodo=inserir">Novo Curso</a>
 		<script type="text/javascript" src="lib/jquery-latest.js"></script>	
 		<script type="text/javascript" src="lib/jquery.quicksearch.js"></script>
 		<script>
 		$(document).ready(function()
-		{ 
-			 
-			$("#aluno tbody tr").quicksearch({
+		{ 			 
+			$("#cuso tbody tr").quicksearch({
 				labelText: 'Procurar: ',
-				attached: '#aluno',
+				attached: '#curso',
 				position: 'before',
 				delay: 100,
 				loaderText: 'Carregando...',
 				onAfter: function() {
-					if ($("#aluno tbody tr:visible").length != 0) {
-						$("#aluno").trigger("update");
-						$("#aluno").trigger("appendCache");
-						
+					if ($("#curso tbody tr:visible").length != 0) {
+						$("#curso").trigger("update");
+						$("#curso").trigger("appendCache");						
 					}
 				}
 			});

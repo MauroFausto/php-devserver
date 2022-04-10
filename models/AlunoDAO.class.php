@@ -22,7 +22,8 @@
 				$this->conexao = null;
 				return "Problema ao consultar alunos";
 			}
-		}//fim consultar
+		}
+
 		public function inserir($aluno)
 		{
 			$sql = "INSERT INTO aluno (nome, cpf, dataNascimento)VALUES(?,?,?)";
@@ -41,10 +42,11 @@
 				$this->conexao = null;
 				return "Problema ao inserir aluno";
 			}
-		}//fim do inserir
+		}
+
 		public function buscarAluno($aluno)
 		{
-		$sql = "SELECT * FROM aluno WHERE idaluno = ?";
+			$sql = "SELECT * FROM aluno WHERE idaluno = ?";
 			try
 			{
 				$stm = $this->conexao->prepare($sql);
@@ -58,7 +60,8 @@
 				$this->conexao = null;
 				return "Problema ao buscar um aluno";
 			}
-		}//fim inserir
+		}
+
 		public function alterar($aluno)
 		{
 			$sql = "UPDATE aluno SET nome = ?, cpf = ?, dataNascimento = ? WHERE idaluno = ?";
@@ -79,7 +82,8 @@
 				$this->conexao = null;
 				return "Problema ao alterar o aluno";
 			}
-		}//fim alterar
+		}
+
 		public function excluir($aluno)
 		{
 			$sql = "DELETE FROM aluno WHERE idaluno = ?";
@@ -96,6 +100,6 @@
 				$this->conexao = null;
 				return "Problema ao excluir o aluno";
 			}
-		}//fim excluir
-	}//fim classe
+		}
+	}
 ?>
