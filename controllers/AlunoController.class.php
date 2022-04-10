@@ -11,14 +11,14 @@
 			$alunoDAO = new alunoDAO();
 			$retorno = $alunoDAO->consultar();
 			
-			require_once "views/listar_aluno.php";
+			require_once "views/aluno/listar_aluno.php";
 			
 			
 		}//fim listar
 		
 		public function inserir()
 		{
-			require_once "views/form_aluno.php";
+			require_once "views/aluno/form_aluno.php";
 			if($_POST)
 			{
 				//verificar o preenchimento dos dados
@@ -63,7 +63,7 @@
 				{
 					if(count($ret) > 0)
 					{
-						require_once "views/edit_aluno.php";
+						require_once "views/aluno/edit_aluno.php";
 					}
 					else
 					{
