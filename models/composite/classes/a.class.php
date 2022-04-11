@@ -1,4 +1,7 @@
 <?php
+	
+	require_once "../interfaces/componente.php";
+
 	class a implements componente
 	{
 		private $href;
@@ -14,5 +17,5 @@
 		{
 			echo "<a href='{$this->href}'>{$this->texto}</a>";
 		}
-	}//fim da classe
+	}
 ?>

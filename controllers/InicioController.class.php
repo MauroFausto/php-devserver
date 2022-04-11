@@ -1,8 +1,13 @@
 <?php
-	require_once "Models/componente.php";
-	require_once "Models/ul.class.php";
-	require_once "Models/li.class.php";
-	require_once "Models/a.class.php";
+
+	require_once "models/composite/interfaces/componente.php";
+	require_once "models/composite/classes/ul.class.php";
+	require_once "models/composite/classes/li.class.php";
+	require_once "models/composite/classes/a.class.php";
+	require_once "models/composite/classes/inputButton.class.php";
+	require_once "models/composite/classes/inputDate.class.php";
+	require_once "models/composite/classes/inputText.class.php";
+	require_once "models/composite/classes/radioButton.class.php";
 	
 	class InicioController
 	{
@@ -20,6 +25,11 @@
 			$ul->setElemento(new li(new a("index.php?controle=AlunoController&metodo=listar", "Listar Alunos")));
 			
 			require_once "views/menu.php";
+		}
+
+		public function MostraFormularioContato()
+		{
+			
 		}
 	}
 ?>

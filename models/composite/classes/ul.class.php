@@ -1,8 +1,10 @@
 <?php
+
+	require_once '../interfaces/componente.php';
+
 	class ul implements componente
 	{
-		private $elementos;
-		
+		private $elementos;		
 		
 		public function criar()
 		{
@@ -18,5 +20,5 @@
 		{
 			$this->elementos[] = $elemento;
 		}
-	}//fim da classe
+	}
 ?>

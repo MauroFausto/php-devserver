@@ -1,4 +1,7 @@
 <?php
+
+	require_once "../interfaces/componente.php";
+
 	class li implements componente
 	{
 		private $elemento;
